@@ -1,0 +1,10 @@
+{
+  "Id": "Multiclass",
+  "DisplayName": "Multiple Classes Per Level",
+  "Author": "Hsinyu",
+  "Version": "1.4.1",
+  "ManagerVersion": "0.14.1",
+  "EntryMethod": "Multiclass.Main.Load",
+  "HomePage": "https://www.nexusmods.com/pathfinderkingmaker/mods/96",
+  "Repository": ""
+}

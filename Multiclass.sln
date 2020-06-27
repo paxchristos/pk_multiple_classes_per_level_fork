@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multiclass", "Multiclass\Multiclass.csproj", "{204C5FC3-1FD4-4B39-AFFE-3A3446F62FE2}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ModBase", "ModBase\ModBase.shproj", "{569BC0AE-ED25-4674-AB57-22298ADAA6BD}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ModMaker", "ModMaker\ModMaker.shproj", "{7D3F9428-C134-47FE-9D04-305B4D330401}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ModBase\ModBase.projitems*{204c5fc3-1fd4-4b39-affe-3a3446f62fe2}*SharedItemsImports = 4
+		ModMaker\ModMaker.projitems*{204c5fc3-1fd4-4b39-affe-3a3446f62fe2}*SharedItemsImports = 4
+		ModBase\ModBase.projitems*{569bc0ae-ed25-4674-ab57-22298adaa6bd}*SharedItemsImports = 13
+		ModMaker\ModMaker.projitems*{7d3f9428-c134-47fe-9d04-305b4d330401}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{204C5FC3-1FD4-4B39-AFFE-3A3446F62FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{204C5FC3-1FD4-4B39-AFFE-3A3446F62FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{204C5FC3-1FD4-4B39-AFFE-3A3446F62FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{204C5FC3-1FD4-4B39-AFFE-3A3446F62FE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2F2BBC7-D87F-4808-9B1C-5E6FD99E4AEC}
+	EndGlobalSection
+EndGlobal

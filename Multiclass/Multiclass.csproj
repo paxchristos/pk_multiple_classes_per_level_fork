@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{204C5FC3-1FD4-4B39-AFFE-3A3446F62FE2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Multiclass</RootNamespace>
+    <AssemblyName>Multiclass</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony12, Version=1.2.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Game\Unity Mod Manager\0Harmony12.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>E:\Game\Steam\steamapps\common\Pathfinder Kingmaker\Kingmaker_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Game\Pathfinder Kingmaker\Kingmaker_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>E:\Game\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Game\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>E:\Game\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>E:\Game\Pathfinder Kingmaker\Kingmaker_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityModManager, Version=0.15.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Game\Unity Mod Manager\UnityModManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HarmonyPatches\MultipleClasses\RecalculateCasterLevelOnLevelingUp.cs" />
+    <Compile Include="HarmonyPatches\MultipleClasses\RestrictCasterLevelToCharacterLevel.cs" />
+    <Compile Include="HarmonyPatches\MultipleClasses\RestrictClassLevelForPrerequisitesToCharacterLevel.cs" />
+    <Compile Include="HarmonyPatches\MultipleClasses\RestrictCasterLevelToCharacterLevelTemporary.cs" />
+    <Compile Include="HarmonyPatches\MultipleClasses\TakeHighestSkillPoints.cs" />
+    <Compile Include="HarmonyPatches\Restrictions\IgnoreAbilityCasterCheckers.cs" />
+    <Compile Include="HarmonyPatches\Restrictions\IgnoreBuildingRestrictions.cs" />
+    <Compile Include="HarmonyPatches\Restrictions\IgnoreEquipmentRestrictions.cs" />
+    <Compile Include="HarmonyPatches\Restrictions\IgnoreSpellbookAlignmentRestriction.cs" />
+    <Compile Include="HarmonyPatches\MultipleClasses\TakeHighestBaseStat.cs" />
+    <Compile Include="HarmonyPatches\MultipleClasses\TakeHighestHitDie.cs" />
+    <Compile Include="Menus\RestrictionsOptions.cs" />
+    <Compile Include="Menus\MultipleClassesOptions.cs" />
+    <Compile Include="Menus\LevelUpOptions.cs" />
+    <Compile Include="HarmonyPatches\MultipleClasses\AlwaysReceiveFavoredClassHP.cs" />
+    <Compile Include="HarmonyPatches\MultipleClasses\AlwaysReceiveFavoredClassHPExceptPrestige.cs" />
+    <Compile Include="HarmonyPatches\DebugLog.cs" />
+    <Compile Include="HarmonyPatches\MultipleClasses\FixFavoredClassHP.cs" />
+    <Compile Include="HarmonyPatches\LevelUp\IgnoreAttributePointsRemainingChargen.cs" />
+    <Compile Include="HarmonyPatches\Restrictions\IgnoreActivatableAbilityRestrictions.cs" />
+    <Compile Include="HarmonyPatches\Prerequisites\IgnorePrerequisites.cs" />
+    <Compile Include="HarmonyPatches\LevelUp\IgnoreSkillPointsRemaining.cs" />
+    <Compile Include="HarmonyPatches\LevelUp\IgnoreAlignmentRestriction.cs" />
+    <Compile Include="HarmonyPatches\LevelUp\IgnoreAttributePointsRemaining.cs" />
+    <Compile Include="HarmonyPatches\LevelUp\IgnoreAttributeCapChargen.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="HarmonyPatches\MultipleClasses\General.cs" />
+    <Compile Include="HarmonyPatches\LevelUp\LockCharacterLevel.cs" />
+    <Compile Include="HarmonyPatches\MultipleClasses\MultipleClasses.cs" />
+    <Compile Include="HarmonyPatches\LevelUp\IgnoreSkillCap.cs" />
+    <Compile Include="Menus\MultipleClassesSelections.cs" />
+    <Compile Include="Menus\PrerequisitesOptions.cs" />
+    <Compile Include="Menus\TopMessage.cs" />
+    <Compile Include="Mod.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Extensions\Kingmaker.cs" />
+    <Compile Include="Utils\StateReplacer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.json" />
+  </ItemGroup>
+  <Import Project="..\ModBase\ModBase.projitems" Label="Shared" />
+  <Import Project="..\ModMaker\ModMaker.projitems" Label="Shared" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>rd "$(TargetDir)Multiclass"  /s /q
+mkdir "$(TargetDir)Multiclass"
+copy "$(TargetPath)" "$(TargetDir)Multiclass" /y
+copy "$(ProjectDir)\Info.json" "$(TargetDir)Multiclass\Info.json" /y</PostBuildEvent>
+  </PropertyGroup>
+</Project>
