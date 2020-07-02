@@ -33,8 +33,10 @@ namespace Multiclass.HarmonyPatches
             {
                 foreach (MethodBase method in Core.Mod.PrerequisiteTypes.Select(type => type.GetMethod(nameof(Prerequisite.Check))))
                     yield return method;
-                /*Commeting out the following line allows A fresh build to run on new version of Harmony
-                yield return typeof(PrerequisiteLoreMaster).GetMethod(nameof(PrerequisiteLoreMaster.CheckStat));*/
+                /*in Kingmaker.Blueprints.Classes.Preqrequisites.PrerequisiteLoreMaster CheckStat is an int, Check is a Bool.
+                ORIGINAL yield return typeof(PrerequisiteLoreMaster).GetMethod(nameof(PrerequisiteLoreMaster.CheckStat)); 
+                Fixed Below*/
+                yield return typeof(PrerequisiteLoreMaster).GetMethod(nameof(PrerequisiteLoreMaster.Check));
                 yield return typeof(PrerequisiteParametrizedFeature).GetMethod(nameof(PrerequisiteParametrizedFeature.CheckFeature));
                 yield return typeof(PrerequisiteParametrizedWeaponSubcategory).GetMethod(nameof(PrerequisiteParametrizedWeaponSubcategory.CheckFeature));
                 yield return typeof(PrerequisiteStatValue).GetMethod(nameof(PrerequisiteStatValue.CheckUnit));
